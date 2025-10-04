@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up - VIAWORK</title>
+    <style>
+        body {
+            background-color: #121212; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .form-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 1s;
+        }
+
+        .form-wrapper {
+            background: radial-gradient(circle, #ffd700, rgba(0, 0, 0, 0.8));
+            border-radius: 15px;
+            padding: 2em;
+            width: 320px;
+            box-shadow: 0 4px 40px #ffd700;
+            text-align: center;
+            border: 1px solid #ffd700; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-wrapper:hover {
+            transform: scale(1.02); 
+            box-shadow: 0 4px 30px #ffd700;
+        }
+
+        .form h2 {
+            margin-bottom: 1em;
+            font-size: 2em;
+            position: relative;
+        }
+
+        .form h2::after {
+            content: "✶";
+            font-size: 0.6em;
+            color: #ffd700;
+            position: absolute;
+            top: -15px;
+            right: -10px;
+            transform: rotate(15deg);
+        }
+
+        .input-group {
+            margin-bottom: 1.5em;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 0.9em;
+            display: block;
+            margin-bottom: 0.3em;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.6em;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: #fff;
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 8px #ffd700; 
+            outline: none;
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 0.8em;
+            border-radius: 5px;
+            border: none;
+            background-color: #ffd700;
+            color: #121212;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .form-button2 {
+            width: 50%;
+            padding: 0.4em;
+            border-radius: 5px;
+            border: none;
+            background-color: #ffd700;
+            color: #121212;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            margin-top: 15px;
+        }
+
+        .form-button:hover {
+            background-color: #ffd700;
+            box-shadow: 0 4px 12px #ffd700;
+        }
+
+        .form-button2:hover {
+            background-color: #ffd700;
+            box-shadow: 0 4px 12px #ffd700;
+        }
+
+        .switch-form {
+            margin-top: 1em;
+            font-size: 0.9em;
+        }
+
+        .nigga {
+            text-decoration: none;
+            color: black;
+        }
+
+        .switch-form a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .switch-form a:hover {
+            color: #ffd700; 
+        }
+
+        .error-message {
+            color: #ff6666;
+            font-size: 0.8em;
+            margin-top: 0.5em;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-wrapper">
+            <form id="login-form" class="form">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                    <div class="error-message" id="login-email-error"></div>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                    <div class="error-message" id="login-password-error"></div>
+                </div>
+                <button type="submit" class="form-button">Log In</button>
+                <button class="form-button2"><a class="nigga" href="index.html">Go Back</a></button>
+                <p class="switch-form">Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></p>
+            </form>
+
+            <form id="signup-form" class="form" style="display: none;">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required>
+                    <div class="error-message" id="signup-email-error"></div>
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Enter your password" required minlength="6">
+                    <div class="error-message" id="signup-password-error"></div>
+                </div>
+                <div class="input-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm your password" required>
+                    <div class="error-message" id="signup-confirm-error"></div>
+                </div>
+                <button type="submit" class="form-button">Sign Up</button>
+                <button class="form-button2"><a class="nigga" href="index.html">Go Back</a></button>
+                <p class="switch-form">Already have an account? <a href="#" onclick="showLogin()">Log In</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Form switching functions
+        function showSignUp() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+            clearErrors();
+        }
+        
+        function showLogin() {
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+            clearErrors();
+        }
+
+        function clearErrors() {
+            const errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(error => {
+                error.style.display = 'none';
+                error.textContent = '';
+            });
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        // Signup form handling
+        document.getElementById('signup-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+            clearErrors();
+
+            // Validation
+            let isValid = true;
+
+            if (!email) {
+                showError('signup-email-error', 'Email is required');
+                isValid = false;
+            }
+
+            if (!password) {
+                showError('signup-password-error', 'Password is required');
+                isValid = false;
+            } else if (password.length < 6) {
+                showError('signup-password-error', 'Password must be at least 6 characters');
+                isValid = false;
+            }
+
+            if (!confirmPassword) {
+                showError('signup-confirm-error', 'Please confirm your password');
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                showError('signup-confirm-error', 'Passwords do not match');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Retrieve existing users from local storage
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+
+                // Check if the email is already registered
+                const userExists = users.some(user => user.email === email);
+                if (userExists) {
+                    showError('signup-email-error', 'This email is already registered');
+                } else {
+                    // Add the new user to the array
+                    users.push({ email, password });
+                    localStorage.setItem('users', JSON.stringify(users));
+
+                    alert('Signup successful! Please log in to continue.');
+                    showLogin();
+                }
+            }
+        });
+
+        // Login form handling
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            clearErrors();
+
+            // Validation
+            let isValid = true;
+
+            if (!email) {
+                showError('login-email-error', 'Email is required');
+                isValid = false;
+            }
+
+            if (!password) {
+                showError('login-password-error', 'Password is required');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Retrieve users from local storage
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+
+                // Find the user with matching credentials
+                const user = users.find(user => user.email === email && user.password === password);
+
+                if (user) {
+                    // Save current user to localStorage
+                    localStorage.setItem('currentUser', JSON.stringify({ email: user.email }));
+                    
+                    alert('Login successful! Redirecting...');
+                    window.location.href = 'index.html';
+                } else {
+                    showError('login-password-error', 'Invalid email or password');
+                }
+            }
+        });
+
+        // Check if user is already logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                alert('You are already logged in! Redirecting to home page...');
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

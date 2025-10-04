@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Products - VIAWORK</title>
+    <link rel="stylesheet" href="products.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                     <img src="../wadiibogoslogo1.png" alt="VIAWORK Logo">
+                </a>
+                <span><a class="nigga1" href="index.html">VIAWORK</a> </span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Projects <i class="arrow-down"></i></a>
+                    <div class="dropdown-content mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h3>Infrastructure</h3>
+                                <a href="#">Transportation Networks</a>
+                                <a href="#">Smart Cities</a>
+                                <a href="#">Urban Development</a>
+                                <a href="#">Bridge Systems</a>
+                            </div>
+                            <div class="mega-column">
+                                <h3>Energy</h3>
+                                <a href="#">Solar Facilities</a>
+                                <a href="#">Wind Farms</a>
+                                <a href="#">Nuclear Plants</a>
+                                <a href="#">Grid Infrastructure</a>
+                            </div>
+                            <div class="mega-column">
+                                <h3>Industrial</h3>
+                                <a href="#">Manufacturing</a>
+                                <a href="#">Data Centers</a>
+                                <a href="#">Logistics Hubs</a>
+                                <a href="#">Processing Plants</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Services <i class="arrow-down"></i></a>
+                    <div class="dropdown-content mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h3>Engineering</h3>
+                                <a href="#">Structural Design</a>
+                                <a href="#">Systems Integration</a>
+                                <a href="#">Digital Modeling</a>
+                                <a href="#">Sustainability</a>
+                            </div>
+                            <div class="mega-column">
+                                <h3>Construction</h3>
+                                <a href="#">Project Management</a>
+                                <a href="#">Quality Assurance</a>
+                                <a href="#">Safety Systems</a>
+                                <a href="#">Technology Integration</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#about" class="nav-link">About</a>
+                <a href="#news" class="nav-link">Insights</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+       <div class="cart-popup" id="cartPopup">
+        <div class="cart-icon">🛒</div>
+        <div class="popup-content">
+            <div class="popup-title">Item Added to Cart!</div>
+            <div class="popup-message">Your product has been successfully added to your shopping cart.</div>
+        </div>
+        <div class="popup-count" id="cartPopupCount">1</div>
+    </div>
+
+
+    <!-- Products Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Construction Products</h1>
+                <p class="hero-subtitle">Premium equipment and materials for professional construction projects worldwide</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Products</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Brands</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Filter Section -->
+    <section class="products-filter">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="search-box">
+                    <input type="text" id="searchProducts" placeholder="Search products...">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M19 19L13 13M15 8A7 7 0 1 1 1 8A7 7 0 0 1 15 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All Products</button>
+                    <button class="filter-btn" data-category="machinery">Machinery</button>
+                    <button class="filter-btn" data-category="tools">Tools</button>
+                    <button class="filter-btn" data-category="safety">Safety</button>
+                    <button class="filter-btn" data-category="materials">Materials</button>
+                </div>
+                <div class="sort-controls">
+                    <select id="sortProducts">
+                        <option value="name">Sort by Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-grid-section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body">
+                <div class="product-detail-content">
+                    <div class="product-images">
+                        <div class="main-image">
+                            <img id="modalProductImage" src="" alt="">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h2 id="modalProductName"></h2>
+                        <div class="product-price">
+                            <span class="price" id="modalProductPrice"></span>  
+                            <span class="original-price" id="modalOriginalPrice"></span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars" id="modalProductStars"></div>
+                            <span class="rating-text" id="modalProductRating"></span>
+                        </div>
+                        <div class="product-description" id="modalProductDescription"></div>
+                        <div class="product-specs">
+                            <h4>Specifications</h4>
+                            <div class="specs-grid" id="modalProductSpecs"></div>
+                        </div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <label for="quantity">Quantity:</label>
+                                <div class="quantity-controls">
+                                    <button class="qty-btn" id="qtyMinus">-</button>
+                                    <input type="number" id="quantity" value="1" min="1" max="99">
+                                    <button class="qty-btn" id="qtyPlus">+</button>
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="btn btn-primary buy-now-btn" id="buyNowBtn">
+                                    <span class="btn-text">Buy Now</span>
+                                </button>
+                                <button class="btn btn-secondary save-later-btn" id="saveLaterBtn">
+                                    <span class="btn-text">Save for Later</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span>VIAWORK</span>
+                    </div>
+                    <p>Building the infrastructure of tomorrow through innovative engineering and sustainable construction practices.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#" onclick="scrollToServices()">Infrastructure Development</a></li>
+                        <li><a href="#" onclick="scrollToServices()">Energy Systems</a></li>
+                        <li><a href="#" onclick="scrollToServices()">Industrial Facilities</a></li>
+                        <li><a href="#" onclick="scrollToServices()">Digital Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column"> 
+                    <h4>Industries</h4>
+                    <ul>
+                        <li><a href="#" onclick="scrollToProjects()">Transportation</a></li>
+                        <li><a href="#" onclick="scrollToProjects()">Power Generation</a></li>
+                        <li><a href="#" onclick="scrollToProjects()">Manufacturing</a></li>
+                        <li><a href="#" onclick="scrollToProjects()">Technology</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#about">Careers</a></li>
+                        <li><a href="#about">Sustainability</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 VIAWORK Construction. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+</body>
+</html>

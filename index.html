@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIAWORK Construction - Global Infrastructure Leader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+   <!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="../wadiibogoslogo1.png" alt="VIAWORK">
+            </a>
+            <span><a class="nigga1" href="index.html">VIAWORK</a></span>
+        </div>
+        
+        <div class="nav-menu" id="nav-menu">
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link">Projects <i class="arrow-down"></i></a>
+                <div class="dropdown-content mega-menu">
+                    <div class="mega-menu-content">
+                        <div class="mega-column">
+                            <h3>Infrastructure</h3>
+                            <a href="#" onclick="scrollToProjects()">Transportation Networks</a>
+                            <a href="#" onclick="scrollToProjects()">Smart Cities</a>
+                            <a href="#" onclick="scrollToProjects()">Urban Development</a>
+                            <a href="#" onclick="scrollToProjects()">Bridge Systems</a>
+                        </div>
+                        <div class="mega-column">
+                            <h3>Energy</h3>
+                            <a href="#" onclick="scrollToProjects()">Solar Facilities</a>
+                            <a href="#" onclick="scrollToProjects()">Wind Farms</a>
+                            <a href="#" onclick="scrollToProjects()">Nuclear Plants</a>
+                            <a href="#" onclick="scrollToProjects()">Grid Infrastructure</a>
+                        </div>
+                        <div class="mega-column">
+                            <h3>Industrial</h3>
+                            <a href="#" onclick="scrollToProjects()">Manufacturing</a>
+                            <a href="#" onclick="scrollToProjects()">Data Centers</a>
+                            <a href="#" onclick="scrollToProjects()">Logistics Hubs</a>
+                            <a href="#" onclick="scrollToProjects()">Processing Plants</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link">Services <i class="arrow-down"></i></a>
+                <div class="dropdown-content mega-menu">
+                    <div class="mega-menu-content">
+                        <div class="mega-column">
+                            <h3>Engineering</h3>
+                            <a href="#" onclick="scrollToServices()">Structural Design</a>
+                            <a href="#" onclick="scrollToServices()">Systems Integration</a>
+                            <a href="#" onclick="scrollToServices()">Digital Modeling</a>
+                            <a href="#" onclick="scrollToServices()">Sustainability</a>
+                        </div>
+                        <div class="mega-column">
+                            <h3>Construction</h3>
+                            <a href="#" onclick="scrollToServices()">Project Management</a>
+                            <a href="#" onclick="scrollToServices()">Quality Assurance</a>
+                            <a href="#" onclick="scrollToServices()">Safety Systems</a>
+                            <a href="#" onclick="scrollToServices()">Technology Integration</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#about" class="nav-link">About</a>
+            <a href="#news" class="nav-link">Insights</a>
+            <a href="products.html" class="nav-link">Products</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Authentication Section -->
+        <div class="auth-section" id="authSection">
+            <!-- Show when user is NOT logged in -->
+            <div class="loginbuttonSignupbotton" id="loginSignupButtons">
+                <button class="btnlog"><a class="nigga" href="loginlogout.html">Log In</a></button>
+                <button class="btnsign"> <a class="nigga" href="loginlogout.html">Sign Up</a></button>
+            </div>
+            
+            <!-- Show when user IS logged in -->
+            <div class="user-welcome" id="userWelcome" style="display: none;">
+                <span class="welcome-text">Hello, <span id="usernameDisplay">User</span></span>
+                <button class="btnlogout" id="logoutBtn">Log Out</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="vid1.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="parallax-layer" data-speed="0.5"></div>
+            <div class="parallax-layer" data-speed="0.3"></div>
+            <div class="geometric-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Building Tomorrow's</span>
+                    <span class="title-line accent">Infrastructure</span>
+                    <span class="title-line">Today</span>
+                </h1>
+                <p class="hero-subtitle">Leading global construction and engineering projects that shape the future of civilizations worldwide.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToProjects()">Explore Projects</button>
+                    <a href="products.html" class="btn btn-secondary">Our Products</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Countries</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="150">0</div>
+                <div class="stat-label">Active Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="75000">0</div>
+                <div class="stat-label">Employees</div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Global Capabilities</h2>
+                <p class="section-subtitle">Comprehensive solutions for the world's most complex infrastructure challenges</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <path d="M10 50L30 10L50 50H10Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M20 35H40" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Infrastructure</h3>
+                    <p>Transportation networks, bridges, and smart city solutions that connect communities and drive economic growth.</p>
+                    <a href="#" class="service-link">Learn More</a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <circle cx="30" cy="30" r="20" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M30 15V30L40 40" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Energy Systems</h3>
+                    <p>Renewable energy facilities, power generation plants, and grid infrastructure for sustainable futures.</p>
+                    <a href="#" class="service-link">Learn More</a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <rect x="10" y="20" width="40" height="30" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M15 10L30 20L45 10" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Industrial Facilities</h3>
+                    <p>Manufacturing plants, data centers, and processing facilities with cutting-edge technology integration.</p>
+                    <a href="#" class="service-link">Learn More</a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <path d="M15 45L30 15L45 45" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="30" r="5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Digital Solutions</h3>
+                    <p>Advanced modeling, AI-powered analytics, and digital twin technologies for smarter construction.</p>
+                    <a href="#" class="service-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing our most ambitious and transformative global initiatives</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card large" data-aos="fade-up">
+                    <div class="project-image">
+                        <video class="project-video" autoplay muted loop playsinline>
+                            <source src="vid2.mp4" type="video/mp4">
+                        </video>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Skyline City Development</h3>
+                                <p>Ultra-modern smart city infrastructure spanning 500 acres with integrated transportation and energy systems.</p>
+                                <div class="project-details">
+                                    <span class="project-location">Singapore</span>
+                                    <span class="project-value">$15.2B</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/2850287/pexels-photo-2850287.jpeg" alt="Arctic Energy Complex">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Arctic Energy Complex</h3>
+                                <p>Renewable energy facility delivering clean power to northern communities.</p>
+                                <div class="project-details">
+                                    <span class="project-location">Norway</span>
+                                    <span class="project-value">$8.5B</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <video class="project-video" autoplay muted loop playsinline>
+                            <source src="vid3.mp4" type="video/mp4">
+                        </video>
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Transcontinental Bridge</h3>
+                                <p>Revolutionary suspension bridge connecting two continents with sustainable materials.</p>
+                                <div class="project-details">
+                                    <span class="project-location">Turkey</span>
+                                    <span class="project-value">$12.1B</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg" alt="Quantum Data Center">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Quantum Data Center</h3>
+                                <p>Next-generation computing facility with zero-carbon footprint and AI integration.</p>
+                                <div class="project-details">
+                                    <span class="project-location">Japan</span>
+                                    <span class="project-value">$6.8B</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news" id="news">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Insights</h2>
+                <p class="section-subtitle">Industry leadership and innovative thinking from our global experts</p>
+            </div>
+            
+            <div class="news-slider" id="news-slider">
+                <div class="news-track">
+                    <article class="news-card" data-aos="fade-up">
+                        <div class="news-image">
+                            <video class="news-video" autoplay muted loop playsinline>
+                                <source src="vid4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-category">Innovation</span>
+                                <span class="news-date">Dec 15, 2024</span>
+                            </div>
+                            <h3>The Future of Construction: AI and Robotics Revolution</h3>
+                            <p>Exploring how artificial intelligence and advanced robotics are transforming large-scale construction projects worldwide.</p>
+                            <a href="#" class="news-link">Read Article</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/2850287/pexels-photo-2850287.jpeg" alt="Sustainable Infrastructure">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-category">Sustainability</span>
+                                <span class="news-date">Dec 12, 2024</span>
+                            </div>
+                            <h3>Carbon-Neutral Infrastructure: Leading the Green Revolution</h3>
+                            <p>How we're pioneering sustainable construction methods to achieve net-zero emissions across all projects.</p>
+                            <a href="#" class="news-link">Read Article</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg" alt="Smart Cities">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-category">Technology</span>
+                                <span class="news-date">Dec 10, 2024</span>
+                            </div>
+                            <h3>Smart Cities 2025: Integrated Urban Solutions</h3>
+                            <p>Designing interconnected urban environments that adapt to citizen needs through advanced sensor networks.</p>
+                            <a href="#" class="news-link">Read Article</a>
+                        </div>
+                    </article>
+                    <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg" alt="Smart Cities">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-category">Technology</span>
+                                <span class="news-date">Dec 10, 2024</span>
+                            </div>
+                            <h3>Smart Cities 2025: Integrated Urban Solutions</h3>
+                            <p>Designing interconnected urban environments that adapt to citizen needs through advanced sensor networks.</p>
+                            <a href="#" class="news-link">Read Article</a>
+                        </div>
+                    </article>
+                    <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/2850287/pexels-photo-2850287.jpeg" alt="Smart Cities">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-category">Technology</span>
+                                <span class="news-date">Dec 10, 2024</span>
+                            </div>
+                            <h3>Smart Cities 2025: Integrated Urban Solutions</h3>
+                            <p>Designing interconnected urban environments that adapt to citizen needs through advanced sensor networks.</p>
+                            <a href="#" class="news-link">Read Article</a>
+                        </div>
+                    </article>
+                    <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg" alt="Smart Cities">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-category">Technology</span>
+                                <span class="news-date">Dec 10, 2024</span>
+                            </div>
+                            <h3>Smart Cities 2025: Integrated Urban Solutions</h3>
+                            <p>Designing interconnected urban environments that adapt to citizen needs through advanced sensor networks.</p>
+                            <a href="#" class="news-link">Read Article</a>
+                        </div>
+                    </article>
+                    <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg" alt="Smart Cities">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-category">Technology</span>
+                                <span class="news-date">Dec 10, 2024</span>
+                            </div>
+                            <h3>Smart Cities 2025: Integrated Urban Solutions</h3>
+                            <p>Designing interconnected urban environments that adapt to citizen needs through advanced sensor networks.</p>
+                            <a href="#" class="news-link">Read Article</a>
+                        </div>
+                    </article>
+                    <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/2850287/pexels-photo-2850287.jpeg" alt="Smart Cities">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-category">Technology</span>
+                                <span class="news-date">Dec 10, 2024</span>
+                            </div>
+                            <h3>Smart Cities 2025: Integrated Urban Solutions</h3>
+                            <p>Designing interconnected urban environments that adapt to citizen needs through advanced sensor networks.</p>
+                            <a href="#" class="news-link">Read Article</a>
+                        </div>
+                    </article>
+                    <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg" alt="Smart Cities">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-category">Technology</span>
+                                <span class="news-date">Dec 10, 2024</span>
+                            </div>
+                            <h3>Smart Cities 2025: Integrated Urban Solutions</h3>
+                            <p>Designing interconnected urban environments that adapt to citizen needs through advanced sensor networks.</p>
+                            <a href="#" class="news-link">Read Article</a>
+                        </div>
+                    </article>
+
+
+                </div>
+                
+                <div class="news-navigation">
+                    <button class="news-prev" id="news-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="news-next" id="news-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2 class="section-title">Engineering Tomorrow</h2>
+                    <p class="about-description">For over seven decades, we've been at the forefront of global infrastructure development, delivering projects that define skylines, power economies, and connect civilizations. Our commitment to innovation, sustainability, and excellence drives us to tackle the world's most complex engineering challenges.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-content">
+                                <h4>Innovation Leadership</h4>
+                                <p>Pioneering new construction technologies and methodologies</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">🌍</div>
+                            <div class="feature-content">
+                                <h4>Global Expertise</h4>
+                                <p>Operating across 6 continents with local knowledge</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">🔧</div>
+                            <div class="feature-content">
+                                <h4>Integrated Solutions</h4>
+                                <p>End-to-end project delivery from concept to completion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="visual-grid">
+                        <div class="visual-item large">
+                            <video class="visual-video" autoplay muted loop playsinline>
+                                <source src="vid1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="visual-item">
+                            <img src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg" alt="Engineering">
+                        </div>
+                        <div class="visual-item">
+                            <img src="https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg" alt="Infrastructure">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to build the future together? Let's discuss your next project</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <path d="M20 0C8.954 0 0 8.954 0 20s8.954 20 20 20 20-8.954 20-20S31.046 0 20 0zm0 36c-8.837 0-16-7.163-16-16S11.163 4 20 4s16 7.163 16 16-7.163 16-16 16z" fill="currentColor"/>
+                                <path d="M20 8c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12S26.627 8 20 8zm0 20c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Global Headquarters</h3>
+                        <p>derb ghalef <br>Engineering District<br>Casablanca, nassim </p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <path d="M32 8H8c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h24c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-12 18H8V10h12v16z" fill="currentColor"/>
+                                <path d="M32 10h-4v16h4V10z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+212 777461177<br>+212 708-027770</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <path d="M20 0C8.954 0 0 8.954 0 20s8.954 20 20 20 20-8.954 20-20S31.046 0 20 0zm10 20c0 5.514-4.486 10-10 10s-10-4.486-10-10S14.486 10 20 10s10 4.486 10 10z" fill="currentColor"/>
+                                <path d="M20 14c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p>ayoub-libror<br>ayoub-glovo@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="input-border"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="input-border"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                            <div class="input-border"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                            <div class="input-border"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="project-type">Project Type</label>
+                            <select id="project-type" name="project-type">
+                                <option value="">Select Project Type</option>
+                                <option value="infrastructure">Infrastructure</option>
+                                <option value="energy">Energy Systems</option>
+                                <option value="industrial">Industrial Facilities</option>
+                                <option value="digital">Digital Solutions</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="input-border"></div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project requirements, timeline, and any specific needs..."></textarea>
+                            <div class="input-border"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" stroke-dasharray="31.416" stroke-dashoffset="31.416">
+                                        <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
+                                        <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
+                                    </circle>
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="contact-bg-elements">
+            <div class="bg-shape bg-shape-1"></div>
+            <div class="bg-shape bg-shape-2"></div>
+            <div class="bg-shape bg-shape-3"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../wadiibogoslogo1.png" alt="VIAWORK Logo">
+                        <span>VIAWORK</span>
+                    </div>
+                    <p>Building the infrastructure of tomorrow through innovative engineering and sustainable construction practices.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Infrastructure Development</a></li>
+                        <li><a href="#">Energy Systems</a></li>
+                        <li><a href="#">Industrial Facilities</a></li>
+                        <li><a href="#">Digital Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column"> 
+                    <h4>Industries</h4>
+                    <ul>
+                        <li><a href="#">Transportation</a></li>
+                        <li><a href="#">Power Generation</a></li>
+                        <li><a href="#">Manufacturing</a></li>
+                        <li><a href="#">Technology</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 VIAWORK Construction. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// Authentication State Management
+class AuthManager {
+    constructor() {
+        this.currentUser = null;
+        this.init();
+    }
+
+    init() {
+        this.loadUserFromStorage();
+        this.updateUI();
+        this.setupEventListeners();
+    }
+
+    loadUserFromStorage() {
+        const userData = localStorage.getItem('currentUser');
+        if (userData) {
+            this.currentUser = JSON.parse(userData);
+        }
+    }
+
+    saveUserToStorage() {
+        if (this.currentUser) {
+            localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+        } else {
+            localStorage.removeItem('currentUser');
+        }
+    }
+
+    login(user) {
+        this.currentUser = user;
+        this.saveUserToStorage();
+        this.updateUI();
+    }
+
+    logout() {
+        this.currentUser = null;
+        this.saveUserToStorage();
+        this.updateUI();
+    }
+
+    isLoggedIn() {
+        return this.currentUser !== null;
+    }
+
+    updateUI() {
+        const loginSignupButtons = document.getElementById('loginSignupButtons');
+        const userWelcome = document.getElementById('userWelcome');
+        const usernameDisplay = document.getElementById('usernameDisplay');
+
+        if (this.isLoggedIn()) {
+            // User is logged in - show welcome message and logout button
+            if (loginSignupButtons) loginSignupButtons.style.display = 'none';
+            if (userWelcome) userWelcome.style.display = 'flex';
+            if (usernameDisplay) {
+                // Display username (email before @ symbol)
+                const username = this.currentUser.email.split('@')[0];
+                usernameDisplay.textContent = username;
+            }
+        } else {
+            // User is not logged in - show login/signup buttons
+            if (loginSignupButtons) loginSignupButtons.style.display = 'flex';
+            if (userWelcome) userWelcome.style.display = 'none';
+        }
+    }
+
+    setupEventListeners() {
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                this.logout();
+                // Show success message
+                this.showLogoutMessage();
+            });
+        }
+    }
+
+    showLogoutMessage() {
+        // You can use your existing cart popup system or create a simple alert
+        alert('You have been logged out successfully!');
+        // Alternatively, you can use your cart popup:
+        // showCartPopup('Logged out successfully!');
+    }
+}
+
+// Initialize auth manager when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    window.authManager = new AuthManager();
+});
+</script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

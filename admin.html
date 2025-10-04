@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - VIAWORK</title>
+    <link rel="stylesheet" href="products.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="../wadiibogoslogo1.png" alt="VIAWORK Logo">
+                </a>
+                <span><a class="nigga1" href="index.html">VIAWORK</a></span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="admin.html" class="nav-link">Admin</a>
+                <a href="#logout" class="nav-link">Logout</a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Admin Dashboard</h1>
+                <p class="hero-subtitle">Manage products, track sales, and monitor inventory</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalProducts">0</div>
+                        <div class="stat-label">Products</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalSales">0</div>
+                        <div class="stat-label">Total Sales</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalRevenue">$0</div>
+                        <div class="stat-label">Revenue</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Controls Section -->
+    <section class="products-filter">
+        <div class="container">
+            <div class="filter-controls">
+                <button class="btn btn-primary" id="addProductBtn">
+                    + Add New Product
+                </button>
+                <div class="search-box">
+                    <input type="text" id="searchAdminProducts" placeholder="Search products...">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M19 19L13 13M15 8A7 7 0 1 1 1 8A7 7 0 0 1 15 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Management Section -->
+    <section class="products-grid-section">
+        <div class="container">
+            <div class="admin-products-grid" id="adminProductsGrid">
+                <!-- Products will be loaded here with admin controls -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sales Analytics Section -->
+    <section class="products-grid-section">
+        <div class="container">
+            <h2 style="color: #ffd700; margin-bottom: 2rem; text-align: center;">Sales Analytics</h2>
+            <div class="sales-analytics" id="salesAnalytics">
+                <!-- Sales data will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal for Add/Edit -->
+    <div class="product-modal" id="adminProductModal">
+        <div class="modal-overlay" id="adminModalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="adminModalClose">&times;</button>
+            <div class="modal-body">
+                <h2 id="adminModalTitle" style="color: #ffd700; margin-bottom: 2rem;">Add New Product</h2>
+                <form id="productForm" class="admin-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="productName">Product Name</label>
+                            <input type="text" id="productName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productCategory">Category</label>
+                            <select id="productCategory" name="category" required>
+                                <option value="materials">Materials</option>
+                                <option value="hardware">Hardware</option>
+                                <option value="machinery">Machinery</option>
+                                <option value="tools">Tools</option>
+                                <option value="safety">Safety</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">Price ($)</label>
+                            <input type="number" id="productPrice" name="price" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productOriginalPrice">Original Price ($)</label>
+                            <input type="number" id="productOriginalPrice" name="originalPrice" step="0.01">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="productDescription">Short Description</label>
+                            <textarea id="productDescription" name="description" rows="3" required></textarea>
+                        </div> 
+                        <div class="form-group full-width">
+                            <label for="productFullDescription">Full Description</label>
+                            <textarea id="productFullDescription" name="fullDescription" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="productImage">Product Image</label>
+                            <input type="file" id="productImage" name="image" accept="image/*" required>
+                            <img id="imagePreview" src="" alt="Image Preview" style="display:none;max-width:100px;margin-top:10px;border-radius:8px;" />
+                        </div>
+                        <div class="form-group">
+                            <label for="productRating">Rating</label>
+                            <input type="number" id="productRating" name="rating" min="0" max="5" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productReviews">Reviews Count</label>
+                            <input type="number" id="productReviews" name="reviews" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productBadge">Badge</label>
+                            <select id="productBadge" name="badge">
+                                <option value="">None</option>
+                                <option value="Best Seller">Best Seller</option>
+                                <option value="Popular">Popular</option>
+                                <option value="Premium">Premium</option>
+                                <option value="Top Rated">Top Rated</option>
+                                <option value="Best Value">Best Value</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: #ffd700; margin: 2rem 0 1rem;">Specifications</h3>
+                    <div id="specsContainer">
+                        <div class="spec-row">
+                            <input type="text" class="spec-key" placeholder="Spec Name" name="specKey[]">
+                            <input type="text" class="spec-value" placeholder="Spec Value" name="specValue[]">
+                            <button type="button" class="remove-spec-btn" onclick="removeSpecRow(this)">×</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="addSpecRow()" style="margin-top: 1rem;">
+                        + Add Specification
+                    </button>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Product</button>
+                        <button type="button" class="btn btn-secondary" onclick="closeAdminModal()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div class="cart-popup" id="adminPopup">
+        <div class="cart-icon">✅</div>
+        <div class="popup-content">
+            <div class="popup-title" id="adminPopupTitle">Success!</div>
+            <div class="popup-message" id="adminPopupMessage">Operation completed successfully.</div>
+        </div>
+    </div>
+
+    <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const imageInput = document.getElementById('productImage');
+        const preview = document.getElementById('imagePreview');
+        if (imageInput && preview) {
+            imageInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(evt) {
+                        preview.src = evt.target.result;
+                        preview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.src = '';
+                    preview.style.display = 'none';
+                }
+            });
+        }
+    });
+    </script>
+    <script src="admin.js"></script>
+</body>
+</html>
