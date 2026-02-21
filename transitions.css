@@ -1,5 +1,6 @@
-/* Page Transition Animations */
 
+/* Page Transition Animations */
+/*sup mate, just checking*/
 /* Page overlay for transitions */
 .page-transition-overlay {
     position: fixed;
@@ -115,4 +116,5 @@ html {
 /* Prevent body scroll during transition */
 body.transitioning {
     overflow: hidden;
+
 } 
